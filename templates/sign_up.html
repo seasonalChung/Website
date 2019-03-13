@@ -1,0 +1,41 @@
+<!--sign_up.html-->
+{%extends 'base.html'%}
+{%block title%}單項報名{%endblock%}
+{%block content%}
+{%if message%}
+    <table width = '950' border="1">
+        <tr>
+            <td colspan="3" align = 'center'><font size = '8'>運動會報名表</td>
+        </tr>
+        <tr>
+            <td><font size = '5'>選手姓名：{{user_name}}</td>
+            <td><font size = '5'>報名項目：{{user_item}}</td>
+            <td><font size = '5'>報名組別：{{user_group}}</td>
+        </tr>
+        <tr>
+            <td>test <p>{{user_name}}</p></td>
+            
+        </tr>
+        <tr>
+            <td>test</td>
+        </tr>
+
+    </table>
+    姓名：{{user_name}} 項目：{{user_item}}
+{%endif%}
+    <div class = 'panel panel-primary'>
+        <div class = 'panel-heading'>
+            <form name = 'my form' action = '.' method = 'POST'>
+                {%csrf_token%}
+                <h4 align = center>報名項目</h4>
+        </div>
+        <div class = 'panel-body'>
+            {{form.as_p}}
+        </div>
+        <div class = 'panel-footer'>
+            <input type = 'submit' value = '進入'>
+            </form>
+        </div>
+    </div>
+
+{%endblock%}

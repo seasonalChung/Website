@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block title%} Welcome to Login Site! {%endblock%}
+{%block headmessage%}
+    <h3>登入</h3>
+{%endblock%}
+{%block content%}
+<div class = 'container'>
+{% if message %}
+    <div class = 'alert alert-warning'>{{message}}</div>
+{%endif%}
+<form action = '.' method = 'POST'>
+    {%csrf_token%}
+        <table>
+            {{login_form.as_table}}
+        </table>
+    <input type = 'submit' name = 'PW' value = '送出'>
+    <!-- <input type = 'submit' name = 'FG' value = '忘記密碼'> -->
+</form>
+</div>
+{%endblock%}
